@@ -1,27 +1,18 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- Navigate between neovim and tmux splits seamlessly
+vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Go to left window (tmux aware)" })
+vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Go to lower window (tmux aware)" })
+vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Go to upper window (tmux aware)" })
+vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Go to right window (tmux aware)" })
 
--- macOS specific keymaps
-if vim.fn.has("mac") == 1 then
-  -- Use Cmd+C/V for copy/paste in normal mode (if supported by terminal)
-  -- Most terminals don't support this, but some do
+-- Save with Ctrl+s
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
-  -- Quick access to macOS applications
-  vim.keymap.set("n", "<leader>om", function()
-    vim.fn.jobstart({ "open", "-a", "Messages" })
-  end, { desc = "Open Messages app" })
+-- Clear search highlights
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlights" })
 
-  vim.keymap.set("n", "<leader>of", function()
-    vim.fn.jobstart({ "open", vim.fn.expand("%:p") })
-  end, { desc = "Open current file in default app" })
+-- Better line navigation for wrapped lines
+vim.keymap.set({ "n", "v" }, "j", "gj", { desc = "Down (wrapped)" })
+vim.keymap.set({ "n", "v" }, "k", "gk", { desc = "Up (wrapped)" })
 
-  vim.keymap.set("n", "<leader>od", function()
-    vim.fn.jobstart({ "open", vim.fn.getcwd() })
-  end, { desc = "Open current directory in Finder" })
-end
-
--- Better navigation with Option key (macOS)
--- These work if your terminal sends the right escape sequences
-vim.keymap.set("i", "<A-Left>", "<Esc>b", { desc = "Move word backward" })
-vim.keymap.set("i", "<A-Right>", "<Esc>w", { desc = "Move word forward" })
+-- Lazygit
+vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open Lazygit" })

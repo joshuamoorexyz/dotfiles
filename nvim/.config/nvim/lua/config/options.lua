@@ -1,30 +1,28 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+-- Catppuccin Mocha theme
+vim.cmd.colorscheme("catppuccin-mocha")
 
--- macOS specific options
--- Removed invalid line: vim.g.mac clipboard
+-- Line numbers
+vim.opt.relativenumber = false
+vim.opt.number = true
 
--- Better macOS integration
-if vim.fn.has("mac") == 1 then
-  -- Use pbcopy/pbpaste for clipboard
-  vim.g.clipboard = {
-    name = "macOS-clipboard",
-    copy = {
-      ["+"] = "pbcopy",
-      ["*"] = "pbcopy",
-    },
-    paste = {
-      ["+"] = "pbpaste",
-      ["*"] = "pbpaste",
-    },
-    cache_enabled = 0,
-  }
-end
+-- Indentation
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
--- General options
-vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
-vim.opt.fixeol = false -- Don't add newline at end of file automatically
-vim.opt.backup = false -- Don't create backup files
-vim.opt.writebackup = false -- Don't create backup before overwriting
-vim.opt.swapfile = false -- Don't use swap files
+-- Line wrapping
+vim.opt.wrap = true
+vim.opt.showbreak = "↪ "
+
+-- System clipboard
+vim.opt.clipboard = "unnamedplus"
+
+-- Split behavior
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Python provider
+vim.g.python3_host_prog = os.getenv("NVIM_PYTHON_PATH") or vim.fn.exepath("python3") or vim.fn.exepath("python")
+
+-- LazyVim prettier config
+vim.g.lazyvim_prettier_needs_config = false

@@ -1,6 +1,35 @@
 [user]
-	email = 40312633+joshuamoorexyz@users.noreply.github.com
 	name = Joshua Moore
+	email = 40312633+joshuamoorexyz@users.noreply.github.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	excludesfile = ~/.config/git/ignore
+[pull]
+	rebase = true
+[push]
+	default = current
+[rebase]
+	autoStash = true
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	amend = commit --amend
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	graph = log --oneline --graph --decorate --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	dc = diff --cached
+	ds = diff --staged
+	fa = fetch --all --prune
+[diff]
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
 [safe]
 	directory = /Users/joshua/.local/share/nvim/lazy/mason.nvim
 	directory = /Users/joshua/.local/share/nvim/lazy/mason-lspconfig.nvim
@@ -9,3 +38,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential]
+	helper = osxkeychain
