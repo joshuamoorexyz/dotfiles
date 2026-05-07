@@ -1,5 +1,4 @@
--- Catppuccin Mocha theme
-vim.cmd.colorscheme("catppuccin-mocha")
+-- Colorscheme is handled by LazyVim catppuccin extra
 
 -- Line numbers
 vim.opt.relativenumber = false
