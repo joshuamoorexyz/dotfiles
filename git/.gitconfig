@@ -1,0 +1,11 @@
+[user]
+	email = 40312633+joshuamoorexyz@users.noreply.github.com
+	name = Joshua Moore
+[safe]
+	directory = /Users/joshua/.local/share/nvim/lazy/mason.nvim
+	directory = /Users/joshua/.local/share/nvim/lazy/mason-lspconfig.nvim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
