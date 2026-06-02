@@ -3,46 +3,51 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # ─── Theme ─────────────────────────────────────────────────────────────
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 # ─── Font ──────────────────────────────────────────────────────────────
-font-family = "JetBrainsMono Nerd Font"
+font-family = JetBrainsMono Nerd Font
 font-size = 14
 font-feature = -calt
 font-feature = -liga
 
-# ─── Window & Appearance ─────────────────────────────────────────────
+# ─── Window & Appearance ──────────────────────────────────────────────
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 macos-window-shadow = true
-window-colorspace = display-p3
+
 window-padding-x = 12
 window-padding-y = 12
 window-padding-balance = true
 window-padding-color = extend
+
 window-theme = auto
 window-save-state = always
 window-inherit-font-size = true
-window-vsync = true
+
 background-opacity = 0.95
 background-blur = true
+
 resize-overlay = after-first
 scrollbar = never
 
 # ─── Cursor ───────────────────────────────────────────────────────────
-cursor-style = beam
-cursor-blink = true
+cursor-style = bar
+cursor-style-blink = true
 cursor-invert-fg-bg = false
 cursor-opacity = 0.8
 
-# ─── Keyboard & Navigation ──────────────────────────────────────────
+# ─── Keyboard & Navigation ────────────────────────────────────────────
 mouse-hide-while-typing = true
 
-# Split navigation (vim-style, matches tmux)
-keybind = performable:ctrl+h=goto_split:left
-keybind = performable:ctrl+j=goto_split:bottom
-keybind = performable:ctrl+k=goto_split:top
-keybind = performable:ctrl+l=goto_split:right
+# Split navigation (vim-style)
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+# Clear screen
+keybind = super+l=clear_screen
 
 # Split creation
 keybind = cmd+d=new_split:auto
@@ -65,35 +70,35 @@ keybind = cmd+0=reset_font_size
 # Quick terminal
 keybind = global:cmd+shift+space=toggle_quick_terminal
 
-# ─── Shell Integration ───────────────────────────────────────────────
-shell-integration = zsh
+# ─── Shell Integration ────────────────────────────────────────────────
 shell-integration-features = cursor,sudo,title
+
 window-inherit-working-directory = true
 tab-inherit-working-directory = true
 split-inherit-working-directory = true
 
-# ─── Clipboard & Selection ───────────────────────────────────────────
+# ─── Clipboard & Selection ────────────────────────────────────────────
 copy-on-select = clipboard
 clipboard-paste-protection = false
 clipboard-trim-trailing-spaces = true
+
 bold-is-bright = true
 
-# ─── Scrolling & History ────────────────────────────────────────────
+# ─── Scrolling & History ──────────────────────────────────────────────
 scrollback-limit = 100000
-scroll-multiplier = 4
+mouse-scroll-multiplier = 4
 
-# ─── Notifications ───────────────────────────────────────────────────
+# ─── Notifications ────────────────────────────────────────────────────
 desktop-notifications = true
 bell-features = title,attention
-notify-on-command-finish = unfocused
-notify-on-command-finish-after = 5s
-notify-on-command-finish-action = bell,notify
 
-# ─── Misc ───────────────────────────────────────────────────────────
+# ─── Misc ─────────────────────────────────────────────────────────────
 link-url = true
 link-previews = true
+
 confirm-close-surface = true
 quit-after-last-window-closed = true
+
 minimum-contrast = 1.2
-auto-update-channel = stable
+
 env = GHOSTTY=1
